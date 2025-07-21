@@ -1,0 +1,78 @@
+package javaminiproject;
+
+import java.util.Scanner;
+
+public class ExaminationSystem1 {
+
+    public static void main(String[] args) {
+        String Username = "nanda";
+        String Password = "1422";
+        Scanner s = new Scanner(System.in);
+        
+        System.out.print("Enter username: ");
+        String username = s.nextLine();
+        
+        System.out.print("Enter password: ");
+        String password = s.nextLine();
+
+        if ((username.equals(Username)) && (password.equals(Password))) {
+            System.out.println("Login successful!");
+            startExam(); 
+        } else {
+            System.out.println("Invalid username or password");
+        }
+    }
+
+    static void startExam() {
+        int score = 0;
+        Scanner s = new Scanner(System.in); 
+
+        System.out.println("\n====== JAVA MCQ TEST ======\n");
+
+        System.out.println("Q1. 5 + 3 = ?");
+        System.out.println("A. 1\nB. 8\nC. 6\nD. 9");
+        System.out.print("Answer: ");
+        String ans1 = s.nextLine();
+        if (ans1.equalsIgnoreCase("B")) score++;
+
+        System.out.println("\nQ2. 3 * 8 = ?");
+        System.out.println("A. 24\nB. 21\nC. 42\nD. 20");
+        System.out.print("Answer: ");
+        String ans2 = s.nextLine();
+        if (ans2.equalsIgnoreCase("A")) score++;
+
+        System.out.println("\nQ3. 10 % 2 = ?");
+        System.out.println("A. 3\nB. 4\nC. 5\nD. 0");
+        System.out.print("Answer: ");
+        String ans3 = s.nextLine();
+        if (ans3.equalsIgnoreCase("C")) score++;
+
+        System.out.println("\nQ4. 24 - 12 = ?");
+        System.out.println("A. 11\nB. 12\nC. 20\nD. 13");
+        System.out.print("Answer: ");
+        String ans4 = s.nextLine();
+        if (ans4.equalsIgnoreCase("B")) score++;
+
+        System.out.println("\nQ5. 2 * 5 * 6 = ?");
+        System.out.println("A. 30\nB. 10\nC. 06\nD. 60");
+        System.out.print("Answer: ");
+        String ans5 = s.nextLine();
+        if (ans5.equalsIgnoreCase("D")) score++;
+
+        showResult(score);
+    }
+
+    static void showResult(int score) {
+        System.out.println("\n====== RESULT ======");
+        System.out.println("Total Questions: 5");
+        System.out.println("Correct Answers: " + score);
+        System.out.println("Wrong Answers: " + (5 - score));
+        System.out.println("Your Score: " + (score * 20) + "%");
+
+        if (score >= 3) {
+            System.out.println("Result: PASS");
+        } else {
+            System.out.println("Result: FAIL");
+        }
+    }
+}
